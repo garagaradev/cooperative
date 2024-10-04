@@ -40,3 +40,13 @@ func (c *Cooperative) SaveMoney(id int, amount float64){
   fmt.Println("Member Not Found.")
 }
 
+func (c *Cooperative) BorrowMoney(id int, amount float64){
+  for i, member := range c.MemberList {
+    if member.ID == id {
+      c.MemberList[i].Loan += amount
+      fmt.Printf("Rp%.2f borrowed by %s. Total loan: Rp%.2f\n", amount, member.Name, c.MemberList[i].Loan)
+      return
+    }
+  }
+  fmt.Println("Member Not Found.")
+}
