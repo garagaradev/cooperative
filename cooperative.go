@@ -60,3 +60,13 @@ func (c *Cooperative) CheckSavings(id int){
   }
   fmt.Println("Member Not Found.")
 }
+
+func (c *Cooperative) CheckLoan(id int){
+  for _, member := range c.MemberList {
+    if member.ID == id {
+      fmt.Printf("%s's total loan is Rp%.2f\n", member.Name, member.Loan)
+      return
+    }
+  }
+  fmt.Println("Member Not Found.")
+}
