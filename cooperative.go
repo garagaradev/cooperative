@@ -70,3 +70,25 @@ func (c *Cooperative) CheckLoan(id int){
   }
   fmt.Println("Member Not Found.")
 }
+
+
+func main(){
+  cooperative := Cooperative{}
+
+  cooperative.AddMember("Alice")
+  cooperative.AddMember("Bob")
+
+  cooperative.SaveMoney(1, 1000000)
+  cooperative.SaveMoney(2, 2500000)
+
+  cooperative.BorrowMoney(1, 2000000)
+
+  cooperative.CheckSavings(1)
+  cooperative.CheckLoan(1)
+
+  cooperative.CheckSavings(2)
+  cooperative.CheckLoan(2)
+
+
+
+}
